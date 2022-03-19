@@ -13,7 +13,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class BanSystem extends JavaPlugin {
 
     private BanSystem main;
-    private SetupConfig setupConfig;
     private BanReasons banReasons;
     private Messages messages;
 
@@ -56,7 +55,6 @@ public class BanSystem extends JavaPlugin {
 
     public void init(){
         main = this;
-        setupConfig = new SetupConfig();
         banReasons = new BanReasons();
         messages = new Messages();
 
@@ -66,13 +64,6 @@ public class BanSystem extends JavaPlugin {
 
         if(!banReasons.exist()){
             banReasons.createBanConfig();
-        }
-
-        if(!setupConfig.exist()){
-            setupConfig.createSetupConfig();
-            Bukkit.getConsoleSender().sendMessage("§8<--------------------------------------------------------->");
-            Bukkit.getConsoleSender().sendMessage("§aPlease setup the Configuration file before using the Plugin");
-            Bukkit.getConsoleSender().sendMessage("§8<--------------------------------------------------------->");
         }
     }
 
