@@ -24,7 +24,7 @@ public class Messages {
                                                                      "     §cIf you think that this ban is not right,\n"+
                                                                      "     §cyou can write a ticket at §bYourWebsite\n\n"+
                                                                      "§8<----------[§bBanSystem§8]---------->");
-        this.fileBuilder.setValue("ban.timeRemaining", "§b%weeks% §7week(s) §b%days% §7day(s) §b%hours% §7hour(s) §b%minutes% §7minute(s) §b%seconds% §7secomd(s)");
+        this.fileBuilder.setValue("ban.timeRemaining", "§b%weeks% §7week(s) §b%days% §7day(s) §b%hours% §7hour(s) §b%minutes% §7minute(s) §b%seconds% §7second(s)");
         this.fileBuilder.setValue("ban.unbanSyntax", "§bBanSystem§8> §cSyntax: Use /unban <Playername> !");
         this.fileBuilder.setValue("ban.playerNotBanned", "§bBanSystem§8> §cThat player is not banned!");
         this.fileBuilder.setValue("ban.playerUnbanned", "§bBanSystem§8> §7You have unbanned §8'§b%player%§8'§7!");

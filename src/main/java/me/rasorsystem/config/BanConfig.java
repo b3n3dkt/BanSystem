@@ -84,48 +84,51 @@ public class BanConfig {
         this.fileBuilder.save();
     }
 
-    public String getRemainigTime(){
-        if(getDurationMillis().equalsIgnoreCase("LIFETIME")){
+    public String getRemainigTime() {
+        if (getDurationMillis().equalsIgnoreCase("LIFETIME")) {
             return messages.getMessage("ban.timeRemainingLifetime");
-        }
-        long current = System.currentTimeMillis();
-        long end = Long.valueOf(getDurationMillis());
-        long millis = end-current;
-        int seconds = 0;
-        int minutes = 0;
-        int hours = 0;
-        int days = 0;
+        } else {
+            System.out.println(getDurationMillis());
+            long current = System.currentTimeMillis();
+            long end = Long.valueOf(getDurationMillis())+getTimeStampMillis();
+            long millis = end-current;
+            int seconds = 0;
+            int minutes = 0;
+            int hours = 0;
+            int days = 0;
+            int weeks = 0;
 
-        int weeks;
-        for(weeks = 0; millis>1000L;++seconds){
-            millis -= 1000L;
-        }
+            while (millis > 1000L) {
+                millis -= 1000L;
+                ++seconds;
+            }
 
-        while(seconds > 60){
-            seconds -= 60;
-            ++minutes;
-        }
+            while (seconds > 60) {
+                seconds -= 60;
+                ++minutes;
+            }
 
-        while(minutes > 60){
-            minutes -= 60;
-            --hours;
-        }
+            while (minutes > 60) {
+                minutes -= 60;
+                ++hours;
+            }
 
-        while(hours > 24){
-            hours -= 24;
-            ++days;
-        }
+            while (hours > 24) {
+                hours -= 24;
+                ++days;
+            }
 
-        while(days > 7){
-            days -= 7;
-            ++weeks;
-        }
+            while (days > 7) {
+                days -= 7;
+                ++weeks;
+            }
 
-        return messages.getMessage("ban.timeRemaining").replace("%weeks%", ""+weeks)
-                .replace("%days%", ""+days)
-                .replace("%hours%", ""+hours)
-                .replace("%minutes%", ""+minutes)
-                .replace("%seconds%", ""+seconds);
+            return messages.getMessage("ban.timeRemaining").replace("%weeks%", "" + weeks)
+                    .replace("%days%", "" + days)
+                    .replace("%hours%", "" + hours)
+                    .replace("%minutes%", "" + minutes)
+                    .replace("%seconds%", "" + seconds);
+        }
     }
 
 }
