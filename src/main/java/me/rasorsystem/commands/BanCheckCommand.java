@@ -22,7 +22,7 @@ public class BanCheckCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(sender.hasPermission("banssytem.banCheck")){
             if(args.length != 1){
-                sender.sendMessage(messages.getMessage("ban.banCheckSyntax"));
+                sender.sendMessage(messages.getMessage("ban.banCheckSyntax").replace("&", "§"));
             }else if(args.length == 1){
                 String name = args[0];
                 Player player = Bukkit.getPlayer(uuidGetter.getUUIDFromName(name));
@@ -38,15 +38,17 @@ public class BanCheckCommand implements CommandExecutor {
                             .replace("%reason%", banConfig.getReason())
                             .replace("%duration%", banConfig.getRemainigTime())
                             .replace("%endDate%", banConfig.getEndDate())
-                            .replace("%banner%", banConfig.getBannyBy()));
+                            .replace("%banner%", banConfig.getBannyBy())
+                            .replace("&", "§"));
                 }else{
                     sender.sendMessage(messages.getMessage("ban.banCheckNotBanned").replace("%player%", name)
-                            .replace("%banned%", ""+banConfig.isBanned()));
+                            .replace("%banned%", ""+banConfig.isBanned())
+                            .replace("&", "§"));
                 }
 
             }
         }else{
-            sender.sendMessage(messages.getMessage("norperm"));
+            sender.sendMessage(messages.getMessage("norperm").replace("&", "§"));
         }
         return false;
     }

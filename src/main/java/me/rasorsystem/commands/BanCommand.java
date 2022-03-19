@@ -28,13 +28,13 @@ public class BanCommand implements CommandExecutor {
         if(sender.hasPermission("bansystem.ban")){
             if(args.length != 2){
                 sender.sendMessage("\n");
-                sender.sendMessage(messages.getMessage("ban.banSyntax"));
+                sender.sendMessage(messages.getMessage("ban.banSyntax").replace("&", "§"));
                 sender.sendMessage("\n");
                 for(int i = 1;i<banReasons.getReasonsIndex()+1;i++){
                     if(banReasons.getBanDuration(i).equalsIgnoreCase("LIFETIME")){
-                        sender.sendMessage("§8-§b" + i + " §c" + banReasons.getBanReason(i) + " §e" + banReasons.getBanDuration(i));
+                        sender.sendMessage("§8-§b" + i + " §c" + banReasons.getBanReason(i) + " §e" + banReasons.getBanDuration(i).replace("&", "§"));
                     }else {
-                        sender.sendMessage("§8-§b" + i + " §c" + banReasons.getBanReason(i) + " §e" + banReasons.getDurationDate(i));
+                        sender.sendMessage("§8-§b" + i + " §c" + banReasons.getBanReason(i) + " §e" + banReasons.getDurationDate(i).replace("&", "§"));
                     }
                 }
                 sender.sendMessage("\n");
@@ -57,7 +57,7 @@ public class BanCommand implements CommandExecutor {
                 }
 
                 if(banConfig.isBanned() == true){
-                    sender.sendMessage(messages.getMessage("ban.alreadyBanned"));
+                    sender.sendMessage(messages.getMessage("ban.alreadyBanned").replace("&", "§"));
                     return true;
                 }
 
@@ -67,12 +67,12 @@ public class BanCommand implements CommandExecutor {
                     banConfig.setBanned(banReasons.getBanDuration(id), banReasons.getBanReason(id), banner, false);
                 }
                 if(player != null){
-                    player.kickPlayer(messages.getMessage("ban.kickMessage").replace("%reason%", banConfig.getReason()).replace("%endDate%", banConfig.getEndDate()).replace("%timeLeft%", banConfig.getRemainigTime()));
+                    player.kickPlayer(messages.getMessage("ban.kickMessage").replace("%reason%", banConfig.getReason()).replace("%endDate%", banConfig.getEndDate()).replace("%timeLeft%", banConfig.getRemainigTime()).replace("&", "§"));
                 }
-                sender.sendMessage(messages.getMessage("ban.bannerBanMessage").replace("%player%", name).replace("%reason%", banConfig.getReason()).replace("%endDate%", banConfig.getEndDate()));
+                sender.sendMessage(messages.getMessage("ban.bannerBanMessage").replace("%player%", name).replace("%reason%", banConfig.getReason()).replace("%endDate%", banConfig.getEndDate()).replace("&", "§"));
             }
         }else{
-            sender.sendMessage(messages.getMessage("noperm"));
+            sender.sendMessage(messages.getMessage("noperm").replace("&", "§"));
         }
 
         return false;

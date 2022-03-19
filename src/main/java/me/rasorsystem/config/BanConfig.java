@@ -86,7 +86,7 @@ public class BanConfig {
 
     public String getRemainigTime() {
         if (getDurationMillis().equalsIgnoreCase("LIFETIME")) {
-            return messages.getMessage("ban.timeRemainingLifetime");
+            return messages.getMessage("ban.timeRemainingLifetime").replace("&", "§");
         } else {
             System.out.println(getDurationMillis());
             long current = System.currentTimeMillis();
@@ -127,7 +127,8 @@ public class BanConfig {
                     .replace("%days%", "" + days)
                     .replace("%hours%", "" + hours)
                     .replace("%minutes%", "" + minutes)
-                    .replace("%seconds%", "" + seconds);
+                    .replace("%seconds%", "" + seconds)
+                    .replace("&", "§");
         }
     }
 

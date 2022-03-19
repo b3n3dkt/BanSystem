@@ -22,7 +22,7 @@ public class UnBanCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(sender.hasPermission("bansystem.unban")){
             if(args.length != 1){
-                sender.sendMessage(messages.getMessage("ban.unbanSyntax"));
+                sender.sendMessage(messages.getMessage("ban.unbanSyntax").replace("&", "§"));
             }else if(args.length == 1){
                 String name = args[0];
                 Player player = Bukkit.getPlayer(uuidGetter.getUUIDFromName(name));
@@ -34,13 +34,13 @@ public class UnBanCommand implements CommandExecutor {
                 }
                 if(banConfig.isBanned()){
                     banConfig.setUnBanned();
-                    sender.sendMessage(messages.getMessage("ban.playerUnbanned").replace("%player%", ""+name));
+                    sender.sendMessage(messages.getMessage("ban.playerUnbanned").replace("%player%", ""+name).replace("&", "§"));
                 }else{
-                    sender.sendMessage(messages.getMessage("ban.playerNotBanned"));
+                    sender.sendMessage(messages.getMessage("ban.playerNotBanned").replace("&", "§"));
                 }
             }
         }else{
-            sender.sendMessage(messages.getMessage("noperm"));
+            sender.sendMessage(messages.getMessage("noperm").replace("&", "§"));
         }
         return false;
     }
