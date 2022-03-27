@@ -1,12 +1,10 @@
-package me.rasorsystem.utils;
+package de.rasorsystems.bansystem.utils;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
-import org.bukkit.Location;
-import org.bukkit.block.Sign;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.ItemStack;

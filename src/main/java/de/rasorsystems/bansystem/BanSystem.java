@@ -1,12 +1,11 @@
-package me.rasorsystem;
+package de.rasorsystems.bansystem;
 
-import me.rasorsystem.commands.BanCheckCommand;
-import me.rasorsystem.commands.BanCommand;
-import me.rasorsystem.commands.UnBanCommand;
-import me.rasorsystem.events.LogIn;
-import me.rasorsystem.utils.BanReasons;
-import me.rasorsystem.utils.Messages;
-import me.rasorsystem.utils.SetupConfig;
+import de.rasorsystems.bansystem.commands.BanCheckCommand;
+import de.rasorsystems.bansystem.events.LogIn;
+import de.rasorsystems.bansystem.commands.BanCommand;
+import de.rasorsystems.bansystem.commands.UnBanCommand;
+import de.rasorsystems.bansystem.utils.BanReasons;
+import de.rasorsystems.bansystem.utils.Messages;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 

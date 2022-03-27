@@ -1,10 +1,8 @@
-package me.rasorsystem.commands;
+package de.rasorsystems.bansystem.commands;
 
-import me.rasorsystem.BanSystem;
-import me.rasorsystem.config.BanConfig;
-import me.rasorsystem.utils.BanReasons;
-import me.rasorsystem.utils.Messages;
-import me.rasorsystem.utils.UUIDGetter;
+import de.rasorsystems.bansystem.utils.UUIDGetter;
+import de.rasorsystems.bansystem.config.BanConfig;
+import de.rasorsystems.bansystem.utils.Messages;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;

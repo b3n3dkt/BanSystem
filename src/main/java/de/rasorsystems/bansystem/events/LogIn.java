@@ -1,7 +1,7 @@
-package me.rasorsystem.events;
+package de.rasorsystems.bansystem.events;
 
-import me.rasorsystem.config.BanConfig;
-import me.rasorsystem.utils.Messages;
+import de.rasorsystems.bansystem.config.BanConfig;
+import de.rasorsystems.bansystem.utils.Messages;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

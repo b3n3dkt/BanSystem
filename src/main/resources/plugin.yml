@@ -1,8 +1,8 @@
-name: RasorSystems BanSystem Lite
+name: RasorSystemsBanSystemLite
 author: b3n3dkt
 version: 1.0.0
 api-version: 1.8
-main: me.rasorsystem.BanSystem
+main: de.rasorsystems.bansystem.BanSystem
 
 commands:
    ban:

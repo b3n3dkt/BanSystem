@@ -1,4 +1,4 @@
-package me.rasorsystem.utils;
+package de.rasorsystems.bansystem.utils;
 
 public class BanReasons {
 

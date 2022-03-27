@@ -1,8 +1,7 @@
-package me.rasorsystem.config;
+package de.rasorsystems.bansystem.config;
 
-import me.rasorsystem.utils.FileBuilder;
-import me.rasorsystem.utils.Messages;
-import org.bukkit.entity.Player;
+import de.rasorsystems.bansystem.utils.FileBuilder;
+import de.rasorsystems.bansystem.utils.Messages;
 
 import java.text.SimpleDateFormat;
 

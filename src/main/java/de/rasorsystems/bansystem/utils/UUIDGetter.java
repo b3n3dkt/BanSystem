@@ -1,4 +1,4 @@
-package me.rasorsystem.utils;
+package de.rasorsystems.bansystem.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
